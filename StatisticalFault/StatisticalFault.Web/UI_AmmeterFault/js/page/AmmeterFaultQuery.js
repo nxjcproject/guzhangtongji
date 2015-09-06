@@ -81,7 +81,12 @@ function query() {
         dataType: "json",
         success: function (msg) {
             var m_msg = JSON.parse(msg.d);
-            loadDataGrid("last", m_msg);
+            if (m_msg.total == 0) {
+                alert("没有查询的数据");
+            } else {
+                loadDataGrid("last", m_msg);
+            }
+            
         }
     });
 }
