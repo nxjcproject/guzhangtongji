@@ -44,6 +44,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AmmeterFault\AmmeterFaultService.cs" />
+    <Compile Include="DataCollectionHistory\DataCollectionHistoryQuery.cs" />
+    <Compile Include="DataCollectionStatus\DataCollectionStatus.cs" />
+    <Compile Include="DataCollectionStatus\DataLog.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1592,7 +1592,11 @@
     <Content Include="lib\pllib\themes\jquery.jqplot.css" />
     <Content Include="lib\pllib\themes\jquery.jqplot.min.css" />
     <Content Include="UI_AmmeterFault\AmmeterFaultQuery.aspx" />
+    <Content Include="UI_AmmeterFault\DataCollectionHistoryQuery.aspx" />
     <Content Include="UI_AmmeterFault\js\page\AmmeterFaultQuery.js" />
+    <Content Include="UI_AmmeterFault\js\page\DataCollectionHistoryQuery.js" />
+    <Content Include="UI_AmmeterFault\js\page\DataCollectionStatus.js" />
+    <Content Include="UI_AmmeterFault\StatusQuery.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -1603,6 +1607,20 @@
     </Compile>
     <Compile Include="UI_AmmeterFault\AmmeterFaultQuery.aspx.designer.cs">
       <DependentUpon>AmmeterFaultQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI_AmmeterFault\DataCollectionHistoryQuery.aspx.cs">
+      <DependentUpon>DataCollectionHistoryQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI_AmmeterFault\DataCollectionHistoryQuery.aspx.designer.cs">
+      <DependentUpon>DataCollectionHistoryQuery.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="UI_AmmeterFault\StatusQuery.aspx.cs">
+      <DependentUpon>StatusQuery.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="UI_AmmeterFault\StatusQuery.aspx.designer.cs">
+      <DependentUpon>StatusQuery.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
