@@ -7,7 +7,7 @@ $(function () {
 
 //定时器 定时刷新
 function settime() {
-    window.setInterval(query, 1000);  //循环执行 第一个为到时间执行的方法 第二个为500ms 时间 
+    window.setInterval(query, 15000);  //循环执行 第一个为到时间执行的方法 第二个为500ms 时间 
 }
 
 //初始化日期框
