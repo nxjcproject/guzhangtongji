@@ -52,11 +52,11 @@
 <body>
 
     <div class="easyui-layout" data-options="fit:true,border:false">
-        <div data-options="region:'west',split:true" style="width: 230px;">
+        <div data-options="region:'west',split:true" style="width: 150px;">
             <uc1:OrganisationTree ID="OrganisationTree_ProductionLine" runat="server" />
         </div>
         <!-- 图表开始 -->
-        <div id="toolbar_ReportTemplate" style="display: none; height: 40px; padding-top: 10px">
+        <div id="toolbar_ReportTemplate" style="display: none; height: 56px; padding-top: 10px">
             <table>
                 <tr>
                     <td>
@@ -64,7 +64,7 @@
                             <tr>
                                 <td>生产线：</td>
                                 <td>
-                                    <input id="productLineName" class="easyui-textbox" style="width: 180px;" readonly="true" />
+                                    <input id="productLineName" class="easyui-textbox" style="width: 100px;" readonly="true" />
                                     <input id="organizationId" readonly="true" style="display: none;""/></td>
                                 <td>开始时间：</td>
                                 <td>
@@ -76,11 +76,13 @@
                                 <td>
                                     <input id="endDate" type="text" class="easyui-datetimebox" required="required" style="width: 150px;" />
                                 </td>
-
-
+                                </tr>
+                                </table>
+                        <table>
+                                <tr>
                                 <td>事件类型:</td>
                                 <td>
-                                    <select id="eventType" class="easyui-combobox" name="state" style="width: 180px; height: auto;" panelheight="95">
+                                    <select id="eventType" class="easyui-combobox" name="state" style="width: 100px; height: auto;" panelheight="95">
                                         <option value="">不分类型</option>
                                         <option value="登录事件">登录事件</option>
                                         <option value="正常通知">正常通知</option>

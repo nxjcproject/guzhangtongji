@@ -72,7 +72,10 @@ function query() {
     var endTime = $('#endDate').datebox('getValue');
     var type = $('#eventType').combobox('getValue');
 
-
+    var win = $.messager.progress({
+        title: '请稍后',
+        msg: '数据载入中...'
+    });
     $.ajax({
         type: "POST",
         url: "DataCollectionHistoryQuery.aspx/GetDataHistory",
@@ -80,11 +83,15 @@ function query() {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
+            $.messager.progress('close');
             var m_msg = JSON.parse(msg.d);
             if (m_msg.total == 0) {
                 alert("没有查询的数据")
             }
             else { loadDataGrid("last", m_msg); }
+        },
+        beforeSend: function (XMLHttpRequest) {
+            win;
         }
     });
 }

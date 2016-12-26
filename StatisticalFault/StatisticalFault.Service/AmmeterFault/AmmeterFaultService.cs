@@ -23,12 +23,13 @@ namespace StatisticalFault.Service.AmmeterFault
 //                                and A.OrganizationID=@organizationId";
 //            SqlParameter[] parameters = { new SqlParameter("startTime", startTime), new SqlParameter("endTime", endTime),
 //                                        new SqlParameter("organizationId", organizationId)};
-            string mySql = @"select top(1000) A.vDate, A.Description
+            string mySql = @"select top(1000) A.vDate, A.Description,A.OrganizationID
                                 from system_Error A
                                 where A.vDate>=@startTime
                                 and A.vDate<=@endTime
+                                and A.OrganizationID=@organizationId
                                 order by A.vDate desc";
-            SqlParameter[] parameters = { new SqlParameter("startTime", startTime), new SqlParameter("endTime", endTime)};
+            SqlParameter[] parameters = { new SqlParameter("startTime", startTime), new SqlParameter("endTime", endTime), new SqlParameter("organizationId", organizationId) };
             DataTable table = dataFactory.Query(mySql, parameters);
             return table;
         }

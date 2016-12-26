@@ -72,7 +72,10 @@ function query() {
     var startTime = $('#startDate').datebox('getValue');
     var endTime = $('#endDate').datebox('getValue');
 
-
+    var win = $.messager.progress({
+        title: '请稍后',
+        msg: '数据载入中...'
+    });
     $.ajax({
         type: "POST",
         url: "AmmeterFaultQuery.aspx/GetReportData",
@@ -80,17 +83,24 @@ function query() {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         success: function (msg) {
+            $.messager.progress('close');
             var m_msg = JSON.parse(msg.d);
             if (m_msg.total == 0) {
-                alert("没有查询的数据");
+                loadDataGrid("last", []);
+                $.messager.alert("没有查询的数据");
             } else {
                 loadDataGrid("last", m_msg);
             }
             
+        },
+        beforeSend: function (XMLHttpRequest) {
+            win;
         }
     });
 }
-
+function refresh() {
+    query();
+}
 //datagrid最下面分页栏使用
 function pagerFilter(data) {
     if (typeof data.length == 'number' && typeof data.splice == 'function') {	// is array
